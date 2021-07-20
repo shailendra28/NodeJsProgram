@@ -1,5 +1,6 @@
 WELCOME TO THE NODEJS PROGRAM
 ====================UC1--REPL===========================================
+// Created Command Line
 
 C:\Users\admin>node
 Welcome to Node.js v13.14.0.
@@ -9,3 +10,117 @@ Type ".help" for more information.
 Hello
 undefined
 >
+====================UC2--Node.js debugger===========================================
+
+let a = 10;
+let b = 20;
+let c = a + b;
+
+let s1 = "10";
+let s2 = "20";
+let s3 = s1 + s2;
+
+let d = new Date(); // creates a variable which will contain the current date
+let today = "Today is: " + (d.getMonth() +1) + "/" + d.getDate() + "/" + d.getFullYear();
+let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+
+
+C:\Users\admin>node add.js
+Num Addition is: 30
+Str Addition is: 1020
+Today is: 7/21/2021
+
+C:\Users\admin>node inspect add.js
+< Debugger listening on ws
+< ://127.0.0.1:9229/002b5f91-4da5-4099-9b9d-80c093dbb437
+< For help, see: https://nodejs.org/en/docs/inspector
+< Debugger attached.
+Break on start in add.js:1
+> 1 let a = 10;
+  2 let b = 20;
+  3 let c = a + b;
+debug>
+
+break in add.js:2
+  1 let a = 10;
+> 2 let b = 20;
+  3 let c = a + b;
+  4 console.log("Num Addition is: "+c);
+break in add.js:3
+  1 let a = 10;
+  2 let b = 20;
+> 3 let c = a + b;
+  4 console.log("Num Addition is: "+c);
+  5
+break in add.js:4
+  2 let b = 20;
+  3 let c = a + b;
+> 4 console.log("Num Addition is: "+c);
+  5
+  6
+< Num Addition is: 30
+break in add.js:7
+  5
+  6
+> 7 let s1 = "10";
+  8 let s2 = "20";
+  9 let s3 = s1 + s2;
+break in add.js:8
+  6
+  7 let s1 = "10";
+> 8 let s2 = "20";
+  9 let s3 = s1 + s2;
+ 10 console.log("Str Addition is: "+s3);
+break in add.js:9
+  7 let s1 = "10";
+  8 let s2 = "20";
+> 9 let s3 = s1 + s2;
+ 10 console.log("Str Addition is: "+s3);
+ 11
+break in add.js:10
+  8 let s2 = "20";
+  9 let s3 = s1 + s2;
+>10 console.log("Str Addition is: "+s3);
+ 11
+ 12
+< Str Addition is: 1020
+break in add.js:13
+ 11
+ 12
+>13 let d = new Date(); // creates a variable which will contain the current dat
+e
+ 14 let today = "Today is: " + (d.getMonth() +1) + "/" + d.getDate() + "/" + d.g
+etFullYear();
+ 15 let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+break in add.js:14
+ 12
+ 13 let d = new Date(); // creates a variable which will contain the current dat
+e
+>14 let today = "Today is: " + (d.getMonth() +1) + "/" + d.getDate() + "/" + d.g
+etFullYear();
+ 15 let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+ 16 console.log(today);
+break in add.js:15
+ 13 let d = new Date(); // creates a variable which will contain the current dat
+e
+ 14 let today = "Today is: " + (d.getMonth() +1) + "/" + d.getDate() + "/" + d.g
+etFullYear();
+>15 let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+ 16 console.log(today);
+ 17
+break in add.js:16
+ 14 let today = "Today is: " + (d.getMonth() +1) + "/" + d.getDate() + "/" + d.g
+etFullYear();
+ 15 let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+>16 console.log(today);
+ 17
+ 18
+< Today is: 7/21/2021
+break in add.js:17
+ 15 let time = "Time:" + d.getHours() + ":" + (d.getMinutes());
+ 16 console.log(today);
+>17
+ 18
+debug>
+
+
