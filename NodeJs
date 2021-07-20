@@ -122,5 +122,20 @@ break in add.js:17
 >17
  18
 debug>
+====================UC3--Single Digit Random Number===========================================
 
+C:\Users\admin>node
+Welcome to Node.js v13.14.0.
+Type ".help" for more information.
 
+> console.log(Math.floor(Math.random()*10))
+5
+undefined
+
+> console.log(Math.floor(Math.random()*10))
+7
+undefined
+> console.log(Math.floor(Math.random()*10))
+2
+undefined
+>
